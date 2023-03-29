@@ -12,46 +12,96 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profileform">
-            Add Profile</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#entrymodal">Add New Entry</button>
    
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">ID</th>
+                <th scope="col">#</th>
                 <th scope="col">First Name</th>
+                <th scope="col">Middle Initial</th>
                 <th scope="col">Last Name</th>
-                <th scope="col">Email</th>
+                <th scope="col">Age</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Temperature</th>
+                <th scope="col">Diagnosed</th>
+                <th scope="col">Encounter</th>
+                <th scope="col">Vaxxed</th>
+                <th scope="col">Nationality</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody id="items"></tbody>
             <div class="modal"
-            id="profileform"
+            id="entrymodal"
             tabindex="-1">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Profile</h5>
+                    <h5 class="modal-title">Entry</h5>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                      <form id="profile">
-                          <div class="form-group">
-                              <label for="profileid">ID</label>
-                              <input type="number" class="form-control" id="profileid" placeholder="Enter ID Here">
-                          </div>
+                      <form id="entryform">
                           <div class="form-group">
                               <label for="firstname">First Name</label>
                               <input type="text" class="form-control" id="firstname" placeholder="Enter First Name">
+                          </div>
+                          <div class="form-group">
+                              <label for="middleinitial">Middle Initial</label>
+                              <input type="text" class="form-control" id="middleinitial" placeholder="Enter Middle Initial">
                           </div>
                           <div class="form-group">
                               <label for="lastname">Last Name</label>
                               <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name">
                           </div>
                           <div class="form-group">
-                              <label for="email">Email</label>
-                              <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                              <label for="gender">Gender</label>
+                              <select class="form-control" id="gender">
+                                <option value="">---Select---</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="age">Age</label>
+                              <input type="number" class="form-control" id="age" placeholder="Enter Age">
+                          </div>
+                          <div class="form-group">
+                              <label for="mobilenumber">Mobile Number</label>
+                              <input type="text" class="form-control" id="mobilenumber" placeholder="Enter Mobile Number">
+                          </div>
+                          <div class="form-group">
+                              <label for="temperature">Body Temperature</label>
+                              <input type="number" step="any" class="form-control" id="temperature" placeholder="Enter Temperature">
+                          </div>
+                          <div class="form-group">
+                              <label for="diagnosed">COVID-19 Diagnosed</label>
+                              <select class="form-control" id="diagnosed">
+                                <option value="">---Select---</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="encounter">COVID-19 Encounter</label>
+                              <select class="form-control" id="encounter">
+                                <option value="">---Select---</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="vaxxed">Vacinated</label>
+                              <select class="form-control" id="vaxxed">
+                                <option value="">---Select---</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="nationality">Nationality</label>
+                              <input type="text" class="form-control" id="nationality" placeholder="Enter Nationality">
                           </div>
                       </form>
                   </div>
@@ -78,7 +128,7 @@
                   rowtoedit = null;
               }
    
-              let profile = {
+              let entry = {
                   profileid: $("#profileid").val(),
                   firstname: $("#firstname").val(),
                   lastname: $("#lastname").val(),
